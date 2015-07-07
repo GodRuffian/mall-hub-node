@@ -1,0 +1,11 @@
+---
+node:
+  nankai:
+    title: 南开大学
+    client_id: nankai_client_id
+    url: http://mall.nakai.edu.cn
+  tust:
+    title: 天津科技大学
+    client_id: tust_client_id
+    url: http://tust.labmai.com
+...

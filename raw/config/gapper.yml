@@ -1,0 +1,8 @@
+---
+rpc:
+    client_id: client_id
+    client_secret: client_secret
+    url: http://gapper.in/api
+
+server_home: http://gapper.in/
+...

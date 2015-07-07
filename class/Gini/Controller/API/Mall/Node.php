@@ -10,9 +10,16 @@
 namespace Gini\Controller\API\Mall;
 
 /**
-	* @brief 继承自Gini\Controller\API\Base
+ * @brief 继承自Gini\Controller\API\Base
  */
 class Node extends \Gini\Controller\API\Base
 {
-
+	/**
+	 * getNodes 获得所有销售节点
+	 */
+	public function actionGetNodes()
+	{
+		$nodes = \Gini\Config::get('mall.node');
+		return $nodes;
+	}
 }
