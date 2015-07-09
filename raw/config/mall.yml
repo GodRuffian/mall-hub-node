@@ -8,4 +8,19 @@ node:
     title: 天津科技大学
     client_id: tust_client_id
     url: http://tust.labmai.com
+scopes:
+  100:
+    title: 化学试剂
+    children:
+      1: 普通试剂
+      2: 危险品
+      4: 易制毒
+  8: 生物试剂
+  16: 耗材
+scopes_list:
+  1: 普通试剂
+  2: 危险品
+  4: 易制毒
+  8: 生物试剂
+  16: 耗材
 ...
