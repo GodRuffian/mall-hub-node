@@ -19,7 +19,13 @@ class Node extends \Gini\Controller\API\Base
 	 */
 	public function actionGetNodes()
 	{
-		$nodes = \Gini\Config::get('mall');
+		$nodes = \Gini\Config::get('mall.nodes');
+		return $nodes;
+	}
+
+	public function actionGetScopes()
+	{
+		$nodes = \Gini\Config::get('mall.scopes');
 		return $nodes;
 	}
 }

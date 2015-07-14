@@ -1,26 +1,17 @@
 ---
-node:
+nodes:
   nankai:
     title: 南开大学
     client_id: nankai_client_id
-    url: http://mall.nakai.edu.cn
+    url: nankai_url
   tust:
     title: 天津科技大学
     client_id: tust_client_id
-    url: http://tust.labmai.com
+    url: tust_url
 scopes:
-  100:
-    title: 化学试剂
-    children:
-      1: 普通试剂
-      2: 危险品
-      4: 易制毒
-  8: 生物试剂
-  16: 耗材
-scopes_list:
-  1: 普通试剂
-  2: 危险品
-  4: 易制毒
-  8: 生物试剂
-  16: 耗材
+  chem_reagent: 化学试剂
+  chem_reagent.drug_precursor: 易制毒化学品
+  chem_reagent.hazardous: 危险化学品
+  bio_reagent: 生物试剂
+  consumable: 耗材
 ...
