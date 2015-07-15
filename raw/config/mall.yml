@@ -9,7 +9,7 @@ nodes:
     client_id: tust_client_id
     url: tust_url
 scopes:
-  chem_reagent: 化学试剂
+  chem_reagent: 普通化学品
   chem_reagent.drug_precursor: 易制毒化学品
   chem_reagent.hazardous: 危险化学品
   bio_reagent: 生物试剂
