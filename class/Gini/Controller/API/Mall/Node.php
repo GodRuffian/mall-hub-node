@@ -24,8 +24,7 @@ class Node extends \Gini\Controller\API\Base
         foreach ($nodes as $node) {
             $result[$node->name] = [
                 'title'=> $node->title,
-                'client_id'=> $node->client_id,
-                'url'=> $node->url
+                'number'=> $node->number
             ];
         }
 		return $result;
@@ -35,5 +34,26 @@ class Node extends \Gini\Controller\API\Base
 	{
 		$scopes = \Gini\Config::get('mall.scopes');
 		return $scopes;
-	}
+    }
+
+    public function actionGetClientNode(array $criteria)
+    {
+        $result = [];
+
+        $clientID = $criteria['client_id'];
+        if (!$clientID) return $result;
+
+        $client = a('client', ['client_id'=>$clientID]);
+        if (!$client->id) return $result;
+
+        $result = [
+            'name'=> $client->node->name,
+            'title'=> $client->node->title,
+            'number'=> $client->node->number,
+            'client_id'=> $client->client_id,
+            'url'=> $client->url,
+            'api'=> $client->api,
+        ];
+        return $result;
+    }
 }

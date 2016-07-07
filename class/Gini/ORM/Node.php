@@ -9,19 +9,17 @@
 
 namespace Gini\ORM;
 
-class Node extends \Gini\ORM\Object
+class Node extends Object
 {
     // 名称: nankai
     public $name = 'string:30';
+    // 数字编号: 100
+    public $number = 'bigint';
     // 名称: 南开大学
     public $title = 'string:30';
-    // gapper client_id
-    public $client_id = 'string:40';
-    public $url = 'string:120';
 
     protected static $db_index = [
-        'unique:name',
-        'unique:client_id', // client_id需要唯一性所以，可能需要搜索
-        'title',
+        'unique:name', 
+        'unique:number',
     ];
 }
