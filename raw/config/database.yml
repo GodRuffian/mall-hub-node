@@ -1,0 +1,6 @@
+---
+default:
+  dsn: mysql:dbname=mall_hub_node;host=HOST
+  username: USERNAME
+  password: PASSWORD
+...

@@ -19,13 +19,21 @@ class Node extends \Gini\Controller\API\Base
 	 */
 	public function actionGetNodes()
 	{
-		$nodes = \Gini\Config::get('mall.nodes');
-		return $nodes;
+        $nodes = those('node')->orderBy('id', 'asc');
+        $result = [];
+        foreach ($nodes as $node) {
+            $result[$node->name] = [
+                'title'=> $node->title,
+                'client_id'=> $node->client_id,
+                'url'=> $node->url
+            ];
+        }
+		return $result;
 	}
 
 	public function actionGetScopes()
 	{
-		$nodes = \Gini\Config::get('mall.scopes');
-		return $nodes;
+		$scopes = \Gini\Config::get('mall.scopes');
+		return $scopes;
 	}
 }

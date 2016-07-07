@@ -1,13 +1,4 @@
 ---
-nodes:
-  nankai:
-    title: 南开大学
-    client_id: nankai_client_id
-    url: nankai_url
-  tust:
-    title: 天津科技大学
-    client_id: tust_client_id
-    url: tust_url
 scopes:
   chem_reagent: 普通化学品
   chem_reagent.drug_precursor: 易制毒化学品
