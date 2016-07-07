@@ -36,10 +36,11 @@ class Node extends \Gini\Controller\API\Base
 		return $scopes;
     }
 
-    public function actionGetClientNode($clientID)
+    public function actionGetNode(array $criteria)
     {
         $result = [];
 
+        $clientID = $criteria['client_id'];
         if (!$clientID) return $result;
 
         $client = a('client', ['client_id'=>$clientID]);
