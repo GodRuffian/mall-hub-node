@@ -4,6 +4,47 @@ namespace Gini\Controller\CLI\Hub\Node;
 
 class Init extends \Gini\Controller\CLI
 {
+    public function actionAddNode()
+    {
+        $data = [];
+        $data['name']  = readline('please input node name (e.g. nankai): ');
+        $data['title'] = readline('please input node title (e.g. Nankai Unversity): ');
+        $data['number'] = readline('please input node number (e.g. 100): ');
+        $data = array_filter($data, function($value) {
+            if (empty($value)) return false;
+            return true;
+        });
+        if (!empty($data)) {
+            if ($this->fillNode($data)) {
+                echo "Done.\n";
+            }
+            else {
+                echo "Failed.\n";
+            }
+        }
+    }
+
+    public function actionAddClient()
+    {
+        $data = [];
+        $data['client_id']  = readline('please input client id (e.g. nankai): ');
+        $data['api'] = readline('please input api url (e.g. http://url/api): ');
+        $data['url'] = readline('please input url (e.g. http://url): ');
+        $data['node'] = readline('please input node name (e.g. nankai): ');
+        $data = array_filter($data, function($value) {
+            if (empty($value)) return false;
+            return true;
+        });
+        if (!empty($data)) {
+            if ($this->fillClient($data)) {
+                echo "Done.\n";
+            }
+            else {
+                echo "Failed.\n";
+            }
+        }
+    }
+
     public function actionRun()
     {
         $nodes =[
@@ -116,7 +157,7 @@ class Init extends \Gini\Controller\CLI
         }
         $node->title = $data['title'];
         $node->number = $data['number'];
-        $node->save();
+        return $node->save();
     }
 
     private function fillClient($data)
@@ -128,7 +169,7 @@ class Init extends \Gini\Controller\CLI
         $client->url = $data['url'];
         $client->api = $data['api'];
         $client->node = a('node', ['name'=> $data['node']]);
-        $client->save();
+        return $client->save();
     }
 }
 
