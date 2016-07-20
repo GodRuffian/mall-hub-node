@@ -9,7 +9,6 @@ class Init extends \Gini\Controller\CLI
         $data = [];
         $data['name']  = readline('please input node name (e.g. nankai): ');
         $data['title'] = readline('please input node title (e.g. Nankai Unversity): ');
-        $data['number'] = readline('please input node number (e.g. 100): ');
         $data = array_filter($data, function($value) {
             if (empty($value)) return false;
             return true;
@@ -51,42 +50,34 @@ class Init extends \Gini\Controller\CLI
             [
                 'name'=> 'nankai',
                 'title'=> '南开大学',
-                'number'=> 100,
             ],
             [
                 'name'=> 'tust',
                 'title'=> '天津科技大学',
-                'number'=> 200,
             ],
             [
                 'name'=> 'ntu',
                 'title'=> '南通大学',
-                'number'=> 300,
             ],
             [
                 'name'=> 'cloud',
                 'title'=> '来买云采购',
-                'number'=> 400,
             ],
             [
                 'name'=> 'demo',
                 'title'=> '演示站点',
-                'number'=> 500,
             ],
             [
                 'name'=> 'njust',
                 'title'=> '南京理工大学',
-                'number'=> 600,
             ],
             [
                 'name'=> 'tjutcm',
                 'title'=> '天津中医药大学',
-                'number'=> 700,
             ],
             [
                 'name'=> 'ceta',
                 'title'=> '中持依迪亚',
-                'number'=> 800,
             ],
         ];
         foreach ($nodes as $node) {
@@ -156,7 +147,8 @@ class Init extends \Gini\Controller\CLI
             $node->name = $data['name'];
         }
         $node->title = $data['title'];
-        $node->number = $data['number'];
+        $node->client_id = $data['name'];
+        $node->client_secret = sha1(uniqid(true));
         return $node->save();
     }
 
