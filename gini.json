@@ -4,6 +4,9 @@
     "description": "App description...",
     "version": "0.1.0",
     "dependencies": {
-        "gini": ">=0.6.11"
+        "gini": ">=0.6.11",
+        "cache": "*",
+        "gapper": ">=0.1.14",
+        "image-cache": "*"
     }
 }

@@ -13,8 +13,6 @@ class Node extends Object
 {
     // 名称: nankai
     public $name = 'string:30';
-    // 数字编号: 100
-    public $number = 'bigint';
     // 名称: 南开大学
     public $title = 'string:30';
     public $client_id = 'string:30';
@@ -22,7 +20,6 @@ class Node extends Object
 
     protected static $db_index = [
         'unique:name',
-        'unique:number',
         'unique:client_id',
     ];
 }
