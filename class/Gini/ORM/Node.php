@@ -16,7 +16,7 @@ class Node extends Object
     // 名称: 南开大学
     public $title = 'string:30';
     public $client_id = 'string:30';
-    public $client_secret = 'string:30';
+    public $client_secret = 'string:40';
 
     protected static $db_index = [
         'unique:name',
