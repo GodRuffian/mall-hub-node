@@ -2,6 +2,8 @@
 scopes:
   chem_reagent: 普通化学品
   chem_reagent.drug_precursor: 易制毒化学品
+  chem_reagent.psychotropic: 精神药品
+  chem_reagent.narcotic: 麻醉药品
   chem_reagent.hazardous: 危险化学品
   chem_reagent.highly_toxic: 剧毒化学品
   chem_reagent.explosive: 易制爆化学品
